@@ -64,40 +64,54 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build fade">
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
+        <li>JavaScript was originally developed by <a href="http://upload.wikimedia.org/wikipedia/commons/d/d1/Brendan_Eich_Mozilla_Foundation_official_photo.jpg">Brendan Eich</a> of Netscape</li>
+        <li>Served as CEO of Mozilla <a href="https://blog.mozilla.org/blog/2014/04/03/brendan-eich-steps-down-as-mozilla-ceo/">resigned</a> on 04-Apr-2014</li>
+        <li>ECMAScript is the standards for Javascript </li> 
+        <li>ECMAScript based languages - javascript, actionscript, jscript (MS version)</li>
+        <li>ES.next / ES6 / ES Harmony are same</li>
+        <li><a href="http://kangax.github.io/es5-compat-table/es6/">Compatibility</a> of ES6</li>
+        <li style="font-size:20px">
+          <br /><br />
+          References:<br />
+          1) http://www.infoworld.com/d/developer-world/javascript-creator-ponders-past-future-704<br />
+          2)http://dailyjs.com/2010/05/24/history-of-javascript-1/ <br />
+          3)http://bits.blogs.nytimes.com/2014/04/04/why-mozillas-chief-had-to-resign/ <br />
+          http://www.2ality.com/2011/06/ecmascript.html
         </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
       </ul>
     </article>
     
-     <hgroup>
-      <h3>References:</h3>
-        http://www.infoworld.com/d/developer-world/javascript-creator-ponders-past-future-704
-        http://dailyjs.com/2010/05/24/history-of-javascript-1/
-    </hgroup>
+    
     
   </slide>
 
 <!-- SLIDE 3-->
  <slide>
     <hgroup>
-      <h2>EcmaScript and ES Harmony / ES.next / ES6</h2> <!--<img src="images/history.png" class="history-img">-->
+      <h2>ES6 Features</h2> <!--<img src="images/history.png" class="history-img">-->
     </hgroup>
     <article>
       <ul class="build fade">
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
-        </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
+        <li>Block scoping with 'let'</li>
+        <pre class="prettyprint" data-lang="javascript">
+           //Standard format
+            module Car {
+              // import …
+              // export …
+            }
+
+            // Usage
+            module UniverseTest {};
+            module Universe { module MilkyWay {} };
+            module MilkyWay = 'Universe/MilkyWay';
+            module SolarSystem = Universe.MilkyWay.SolarSystem;
+            module MySystem = SolarSystem;
+          </pre>
+          <li>
+            References:
+            http://globaldev.co.uk/2013/09/es6-part-1/
+            http://addyosmani.com/blog/ecmascript-6-resources-for-the-curious-javascripter/
+          </li>
       </ul>
     </article>
     
