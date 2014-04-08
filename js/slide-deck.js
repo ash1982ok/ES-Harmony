@@ -47,15 +47,19 @@ SlideDeck.prototype.getCurrentSlideFromHash_ = function() {
   } else {
     this.curSlide_ = 0;
   }
+
+
 };
 
 /**
  * @param {number} slideNo
  */
 SlideDeck.prototype.loadSlide = function(slideNo) {
+
   if (slideNo) {
     this.curSlide_ = slideNo - 1;
     this.updateSlides_();
+
   }
 };
 
@@ -63,6 +67,7 @@ SlideDeck.prototype.loadSlide = function(slideNo) {
  * @private
  */
 SlideDeck.prototype.onDomLoaded_ = function(e) {
+
   document.body.classList.add('loaded'); // Add loaded class for templates to use.
 
   this.slides = this.container.querySelectorAll('slide:not([hidden]):not(.hidden):not(.backdrop)');
@@ -166,6 +171,7 @@ SlideDeck.prototype.onPopState_ = function(e) {
  * @param {Event} e
  */
 SlideDeck.prototype.onBodyKeyDown_ = function(e) {
+  
   if (/^(input|textarea)$/i.test(e.target.nodeName) ||
       e.target.isContentEditable) {
     return;
@@ -485,6 +491,7 @@ SlideDeck.prototype.prevSlide = function(opt_dontPush) {
  * @param {boolean=} opt_dontPush
  */
 SlideDeck.prototype.nextSlide = function(opt_dontPush) {
+  console.log('next loaded');
   if (!document.body.classList.contains('overview') && this.buildNextItem_()) {
     return;
   }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES Harmony Examples - let or blockscoping</title>
+</head>
+
+<script src="js/traceur.js" 
+        type="text/javascript"></script>
+    <script src="js/bootstrap.js"
+        type="text/javascript"></script>
+    <script>
+
+      traceur.options.experimental = true;
+    </script>
+
+<script type="text/javascript">
+
+
+(function(){
+    var oldLog = console.log;
+    console.log = function (msg) {
+
+        document.getElementById('txtConsoleOutput').value += "\n" + msg;
+        oldLog.apply(console, arguments);
+    };
+
+
+})();
+
+window.onload = function(){
+	if(window.parent!=null && (window.parent.iFrameInputData != undefined || window.parent.iFrameInputData != null))
+	{
+		document.getElementById('txtJSCode').value = window.parent.iFrameInputData;
+	}
+};
+
+
+
+function runCode() {
+	var code = document.getElementById('txtJSCode').value;
+	var output = eval(code);
+	document.getElementById('txtOutput').value += "\n" + output;
+}
+
+</script>
+<body>
+
+<h4>JS Editor</h4>
+<div style="margin:0 auto; width:100%;">
+	<div style="float:left;border:1px solid black;width:30%">
+		<h4>input</h4>
+		<textarea id="txtJSCode" style="width:98%; height:300px"></textarea>
+	</div>
+	<div style="float:left;border:1px solid black;width:30%">
+		<h4>output</h4>
+		<textarea id="txtOutput" style="width:98%;height:300px"></textarea>
+	</div>
+	<div style="float:left;border:1px solid black;width:30%">
+		<h4>console output</h4>
+		<textarea id="txtConsoleOutput" style="width:98%;height:300px"></textarea>
+	</div>
+</div>
+<div style="clear:both"></div>
+	<button onclick="runCode()">Run JS Code</button>
+	<button onclick="javascript:document.getElementById('txtJSCode').value='';">clear input</button>
+	<button onclick="javascript:document.getElementById('txtOutput').value='';">clear output</button>
+	<button onclick="javascript:document.getElementById('txtConsoleOutput').value='';">clear console</button>
+	<button onclick="javascript:document.getElementById('txtJSCode').value='';javascript:document.getElementById('txtConsoleOutput').value='';javascript:document.getElementById('txtOutput').value='';">clear all</button>
+
+</body>
+</html>
