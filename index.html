@@ -105,7 +105,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>'let' keywork allows block scope</li>
         <li>
         <ul> 
-          <li>What is block scoping?</span> </li>
+          <li>What is block scoping?</span> <a href="http://www.compileonline.com/compile_cpp11_online.php">CPP Block Example</a> </li>
             <pre id="inputdata-blockscope" class="prettyprint" data-lang="javascript">
 // Both firstName variables are in the global scope, 
 // even though the second one is surrounded by a block {}. 
@@ -132,7 +132,7 @@ console.log (firstName); // Bob
  
  <slide >
     <hgroup>
-      <h2>ES6 Features - 'let' / block scope</h2> <!--<img src="images/history.png" class="history-img">-->
+      <h2>ES6 Features - 'let' or 'const' / block scope</h2> <!--<img src="images/history.png" class="history-img">-->
     </hgroup>
     <article>
       <a href="http://google.github.io/traceur-compiler/demo/repl.html">Traceur Compiler Online </a>
@@ -143,38 +143,31 @@ console.log (firstName); // Bob
  <!-- SLIDE 4-->
  <slide>
     <hgroup>
-      <h2>ES6 Feature: Modules</h2> <!--<img src="images/history.png" class="history-img">-->
+      <h2>ES6 Feature - Classes</h2> <!--<img src="images/history.png" class="history-img">-->
     </hgroup>
     <article>
       <ul class="build fade">
-        <li>Manageable blocks of functionality</li>
-        <li>In ES.next, A module is a unit of code contained within a module declaration. </li>
+       <li> <a href="./examples/editor.html">Javascript Editor</a> <a href="http://google.github.io/traceur-compiler/demo/repl.html">Traceur Compiler Online </a></li>
+        <pre class="prettyprint" data-lang="javascript">
+/* ES5 way of creating a Class */
+var Language = function(arguments) {
+  this.name = arguments.name;
+  this.founder = arguments.founder;
+  this.year = arguments.year;
+};
 
-          <pre class="prettyprint" data-lang="javascript">
-           //Standard format
-            module Car {
-              // import …
-              // export …
-            }
-
-            // Usage
-            module UniverseTest {};
-            module Universe { module MilkyWay {} };
-            module MilkyWay = 'Universe/MilkyWay';
-            module SolarSystem = Universe.MilkyWay.SolarSystem;
-            module MySystem = SolarSystem;
+Language.prototype.summary = function() {
+  return this.name + " was created by " + this.founder + " in " + this.year;
+};
             </pre>
-       
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
+            <li style="font-size:12px">
+                <h3>References:</h3><br />
+                http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf <br />
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+            </li>
       </ul>
     </article>
-    
-     <hgroup>
-      <h3>References:</h3>
-        http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf
-    </hgroup>
-    
+     
   </slide>
 
 
@@ -488,9 +481,7 @@ function helloWorld(world) {
   </slide>
 
   <slide>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
+      References :
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
