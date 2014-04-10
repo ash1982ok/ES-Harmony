@@ -58,9 +58,8 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>History of Javascript</li>
-        <li>Introduction to ES Harmony</li>
-        <li>Demo</li>
+        <li>History of Javascript and What is ES</li>
+        <li>Features &amp; Demos</li>
       </ul>
     </article>
   </slide>
@@ -140,6 +139,102 @@ console.log (firstName); // Bob
     </article>
   </slide>
  
+  <!-- SLIDE 4-->
+ <slide>
+    <hgroup>
+      <h2>ES6 Feature - default arguments</h2> <!--<img src="images/history.png" class="history-img">-->
+    </hgroup>
+    <article>
+      <ul class="build fade">
+       <li> <a href="./examples/editor.html">Javascript Editor</a> <a href="http://google.github.io/traceur-compiler/demo/repl.html">Traceur Compiler Online </a></li>
+        <pre class="prettyprint" data-lang="javascript">
+function history(lang = "C", year = 1972) {
+  return lang + " was created around the year " + year;
+}
+            </pre>
+            <li style="font-size:12px">
+                <h3>References:</h3><br />
+                http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf <br />
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+            </li>
+      </ul>
+    </article>
+     
+  </slide>
+
+<!-- SLIDE 4-->
+ <slide>
+    <hgroup>
+      <h2>ES6 Feature - Rest parameter</h2> <!--<img src="images/history.png" class="history-img">-->
+    </hgroup>
+    <article>
+      <ul class="build fade">
+       <li> <a href="./examples/editor.html">Javascript Editor</a> <a href="http://google.github.io/traceur-compiler/demo/repl.html">Traceur Compiler Online </a></li>
+        <pre class="prettyprint" data-lang="javascript">
+function push(array, ...items) { 
+// defining rest parameters with 3 dot syntax
+  items.forEach(function(item) {
+    array.push(item);
+    console.log( item );
+  });
+}
+ 
+// 1 fixed + 4 variable parameters
+var planets = [];
+console.log("Inner planets of our Solar system are: " );
+push(planets, "Mercury", "Venus", "Earth", "Mars"); // rest parameters
+
+/*
+ES5 Arguments Object
+-----------------*/
+var push = function (){console.log(arguments);}
+
+            </pre>
+            <li style="font-size:12px">
+                <h3>References:</h3><br />
+                http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf <br />
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+            </li>
+      </ul>
+    </article>
+     
+  </slide>
+
+ <slide>
+    <hgroup>
+      <h2>ES6 Feature - Spread Operator</h2> <!--<img src="images/history.png" class="history-img">-->
+    </hgroup>
+    <article>
+      <ul class="build fade">
+       <li> <a href="./examples/editor.html">Javascript Editor</a> <a href="http://google.github.io/traceur-compiler/demo/repl.html">Traceur Compiler Online </a></li>
+        <pre class="prettyprint" data-lang="javascript">
+// Spread operator "...weblink"
+function createURL (comment, path, protocol, subdomain, domain, tld) {
+      var shoutout = comment
+        + ": " + protocol
+        + "://" + subdomain
+        + "." + domain
+        + "." + tld
+        + "/" + path;
+  console.log( shoutout );
+}
+ 
+var weblink = ["hypertext/WWW/TheProject.html", "http", "info", "cern", "ch"],
+  comment = "World's first Website";
+ 
+createURL(comment, ...weblink ); // spread operator
+
+            </pre>
+            <li style="font-size:12px">
+                <h3>References:</h3><br />
+                http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf <br />
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+            </li>
+      </ul>
+    </article>
+     
+  </slide>
+
  <!-- SLIDE 4-->
  <slide>
     <hgroup>
@@ -170,325 +265,60 @@ Language.prototype.summary = function() {
      
   </slide>
 
-
   <slide>
     <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>ES6 Feature - Modules</h2> <!--<img src="images/history.png" class="history-img">-->
     </hgroup>
     <article>
-      <p>A list where items build:</p>
-      <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-      <p>Another list, but items fade as they build:</p>
       <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide hidden>
-    Hidden slides are left out of the presentation.
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
+       <li> <a href="./examples/editor.html">Javascript Editor</a> 
+       <a href="http://google.github.io/traceur-compiler/demo/repl.html">Traceur Compiler Online </a>
+       <a href="http://square.github.io/es6-module-transpiler/">ES6 Module transpiler </a>
+       </li>
+        <pre class="prettyprint" data-lang="javascript">
+module cakeFactory{
+ 
+    // specify dependencies
+    import baker from staff;
+ 
+    // import everything with wildcards
+    import * from skills;
+ 
+    export var oven = {
+        makeCupcake: function( toppings ){
+            baker.bake('cupcake', toppings);
+        },
+        makeMuffin: function( mSize ){
+            baker.bake('muffin', size);
+        }
+    }
 }
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
+            </pre>
+            <li style="font-size:12px">
+                <h3>References:</h3><br />
+                http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf <br />
+                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+            </li>
+      </ul>
     </article>
+     
   </slide>
 
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Slide with Speaker Notes</h2>
-    </hgroup>
-    <article>
-      <p>Press 'p' to toggle speaker notes.</p>
-    </article>
-  </slide>
 
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Presenter Mode</h2>
-    </hgroup>
-    <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
+  
 
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
 
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Iframe</h2>
-    </hgroup>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
-  </slide>
-
-  <slide>
-      References :
-  </slide>
 
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>&lt;Thank You!&gt;</h2>
-      <p>Important contact information goes here.</p>
+      
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
